@@ -17,13 +17,13 @@ namespace TrabajoCambioBilletes
 
             //resultado.innerHTML += e.cantidad + " billetes de $" + e.valor + "<br />";
 
-            Console.WriteLine("Please Enter an money value: ");
+            Console.WriteLine("Please Enter a money value: ");
             double moneyUserRequest ;
 
             while (!double.TryParse(Console.ReadLine(), out moneyUserRequest))
             {
                 Console.WriteLine("Please Enter a valid numerical value!");
-                Console.WriteLine("Please Enter an money value: ");
+                Console.WriteLine("Please Enter a money value: ");
             }
 
             foreach (int moneyValue in ValuesArray)
