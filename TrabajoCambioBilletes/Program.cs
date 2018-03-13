@@ -11,11 +11,9 @@ namespace TrabajoCambioBilletes
         static void Main(string[] args)
         {
 
-            int[] caja = new int[] { 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50 };
+            int[] ValuesArray = new int[] { 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50 };
             //var entregado = [];
             dynamic division = 0;
-            int papeles = 0;
-            dynamic entregado = new dynamic[] { };
 
             //resultado.innerHTML += e.cantidad + " billetes de $" + e.valor + "<br />";
 
@@ -28,34 +26,21 @@ namespace TrabajoCambioBilletes
                 Console.WriteLine("Please Enter an money value: ");
             }
 
-            foreach (int name in caja)
+            foreach (int moneyValue in ValuesArray)
             {
                 if(moneyUserRequest > 0)
                 {
-                    division = Math.Floor(((moneyUserRequest / name)));
-
-                    entregado.Add(division);       
+                    division = Math.Floor(((moneyUserRequest / moneyValue))); 
                     
-                    moneyUserRequest = moneyUserRequest - (name * papeles);
+                    if(division > 0)
+                    {
+                        Console.WriteLine("Your Money amount of: $" + moneyValue + " is: " + division);
+                    }
 
-                }
-                Console.WriteLine(name);
+                    moneyUserRequest = moneyUserRequest - (moneyValue * division);
+                }                
             }
-
-            foreach (int e in entregado)
-            {
-              
-              Console.WriteLine( e + " billetes");
-
-              
-            }
-
-
-
             Console.ReadKey();
-
-
-
         }
 
 
